@@ -1,4 +1,21 @@
 from mitmproxy import ctx
+import logging
+
+# Configuração de Log para o Railway
+logging.basicConfig(level=logging.INFO)
+
+def load(loader):
+    # ESSAS 3 LINHAS SÃO O SEGREDO PARA NÃO CRASHAR
+    ctx.options.ssl_insecure = True
+    ctx.options.upstream_cert = False
+    ctx.options.connection_strategy = "eager"
+    logging.info("Bypass Server Started - SSL Insecure Mode ON")
+
+def request(flow):
+    # Aqui você coloca seus filtros de bypass
+    if "garena" in flow.request.pretty_url:
+        logging.info(f"Interceptado: {flow.request.pretty_url}")
+        # Exemplo: flow.request.host = "nova-rota.com"
 
 def start():
     # Isso impede que o servidor bloqueie a conexão do jogo
