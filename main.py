@@ -1,3 +1,10 @@
+from mitmproxy import ctx
+
+def start():
+    # Isso impede que o servidor bloqueie a conexão do jogo
+    ctx.options.ssl_insecure = True 
+    ctx.options.upstream_cert = False
+
 import sys
 import subprocess
 import io
