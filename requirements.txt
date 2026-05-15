@@ -1,4 +1,3 @@
 mitmproxy
 requests
 pycryptodome
-protobuf-decoder
