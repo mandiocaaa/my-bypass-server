@@ -12,10 +12,10 @@ def load(loader):
     logging.info("Bypass Server Started - SSL Insecure Mode ON")
 
 def request(flow):
-    # Aqui você coloca seus filtros de bypass
-    if "garena" in flow.request.pretty_url:
-        logging.info(f"Interceptado: {flow.request.pretty_url}")
-        # Exemplo: flow.request.host = "nova-rota.com"
+    # Força o bypass de certificados para domínios da Garena
+    if "garena" in flow.request.pretty_url or "facebook" in flow.request.pretty_url:
+        flow.metadata["ssl_insecure"] = True 
+        logging.info(f"Bypass SSL aplicado em: {flow.request.pretty_url}")
 
 def start():
     # Isso impede que o servidor bloqueie a conexão do jogo
