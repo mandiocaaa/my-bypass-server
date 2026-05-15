@@ -4,6 +4,7 @@ def start():
     # Isso impede que o servidor bloqueie a conexão do jogo
     ctx.options.ssl_insecure = True 
     ctx.options.upstream_cert = False
+    ctx.options.ssl_insecure = True
 
 import sys
 import subprocess
