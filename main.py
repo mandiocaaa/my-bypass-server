@@ -42,7 +42,7 @@ from mitmproxy import http
 from common.utils import aes_decrypt, encrypt_api, get_available_room, CrEaTe_ProTo
 
 # ==================== CONFIG ====================
-LISTEN_PORT = 9944
+LISTEN_PORT = 80
 UID_FILE = "uid.txt"
 WHITELIST_MSG = "[ffffff] UID NOT AUTHORIZED\n\n[FFFFFF]UID: {uid} ."
 
