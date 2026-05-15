@@ -22,6 +22,8 @@ def start():
     ctx.options.ssl_insecure = True 
     ctx.options.upstream_cert = False
     ctx.options.ssl_insecure = True
+    ctx.options.upstream_cert = False
+    ctx.options.connection_strategy = "eager"
 
 import sys
 import subprocess
